@@ -1,0 +1,11 @@
+language: ruby
+cache: bundler
+sudo: false
+rvm:
+- 2.3.1
+before_install: gem install bundler
+notifications:
+  email: false
+env:
+  global:
+    secure: kYFQh6ljbxCjeVSblngOY+50qRbSigK/P+osQfxgAe0e5NLV14zUqChCnS8ipdPP86HyNxBLJlFlu08fEXmQSwQUd+7j87TWR6v9+UFebmvmMrewRdmcKgFJZI/cu9CP6dAc7Lh3mD/WPQOTuEDx7boXhkc3FCBIaDLtdcva2OrD6AFzfjWvZEPYC40OEZdLbpnkKEd8uOfYkd+vX7eUAhtlsXbXd5ZX9j55CbdXeVPhzI1GKbWQYWF5K0lQYgY+FBke6SmN8X7XjVIF0McA72X9V0I3xyjTEr0Rm/8JPnMXC9F5o8Rqh3sKkF2vRUhAZw9nvZI7BjZJhiudyrR7/JX+ErkLpFgNUqz6wBPsWBRv4zn25atdDIMHs5hYRVyPpLl0xtNKnJwUd6m/6aeUGP0B6x80sDx4CPVPSeFpJ+NbND2KYHxi9Aw2KqKwOBcZWVDwAjecewpUOJlnMX+3/g24FXkmFICc4zaJazCPiW6T2GR/YwIZiu0c5oapX/tU2QfNMZHY/6leFIcYc1mX5bLoaaYSuYKizncJe4EJnyEp5myapDq2mVYCol3HmhkgQ8Bd8T8WxLrFv1954xkd/npFMov+bHrnt5Cypbr+qTocnVHSA968m8YCTyNjzU5fvJgZweQKsFK1sPGHgHGiKlBeKc5syJo7QbH8N+j7VRc=
