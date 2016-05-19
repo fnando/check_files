@@ -36,7 +36,7 @@ module Minitest
   class Test
     setup do
       Dir["tmp/cache/*"].each {|file| File.unlink(file) }
-      Dir["tmp/files/*"].each {|entry| `rm -rf #{entry}` }
+      Dir["tmp/files/*"].each {|entry| FileUtils.rm_rf(entry) }
     end
 
     def save_file(path, contents = "")

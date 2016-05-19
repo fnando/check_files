@@ -35,7 +35,7 @@ module CheckFiles
     end
 
     def update_cache
-      File.open(cache_path, "w") {|f| f << current_digest }
+      File.open(cache_path, "w") {|io| io << current_digest }
     end
 
     def compute_digest(entry)
