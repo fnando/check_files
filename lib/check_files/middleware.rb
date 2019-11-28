@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module CheckFiles
   class Middleware
     def initialize(app)

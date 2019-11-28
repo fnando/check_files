@@ -1,6 +1,6 @@
 # CheckFiles
 
-[![Travis-CI](https://travis-ci.org/fnando/check_files.png)](https://travis-ci.org/fnando/check_files)
+[![Travis-CI](https://travis-ci.org/fnando/check_files.svg)](https://travis-ci.org/fnando/check_files)
 [![Code Climate](https://codeclimate.com/github/fnando/check_files/badges/gpa.svg)](https://codeclimate.com/github/fnando/check_files)
 [![Test Coverage](https://codeclimate.com/github/fnando/check_files/badges/coverage.svg)](https://codeclimate.com/github/fnando/check_files/coverage)
 [![Gem](https://img.shields.io/gem/v/check_files.svg)](https://rubygems.org/gems/check_files)

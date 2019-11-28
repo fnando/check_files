@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 require "rails/railtie"
+require "fileutils"
 
 module CheckFiles
   require "check_files/version"

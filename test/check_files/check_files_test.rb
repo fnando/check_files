@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "test_helper"
 
 class CheckFilesTest < Minitest::Test
@@ -14,7 +16,8 @@ class CheckFilesTest < Minitest::Test
 
   test "raises exception when something changes" do
     assert_raises RuntimeError do
-      Rails.configuration.check_files.notifier = CheckFiles::Notifiers::Exception
+      Rails.configuration.check_files.notifier =
+        CheckFiles::Notifiers::Exception
 
       CheckFiles.check!
       save_file("tmp/files/file.txt", "a")
@@ -31,6 +34,6 @@ class CheckFilesTest < Minitest::Test
       CheckFiles.check!
     end
 
-    assert err.include?("=> You must restart your web development server; tmp/files/file.txt has changed.")
+    assert err.include?("=> You must restart your web development server; tmp/files/file.txt has changed.") # rubocop:disable Metrics/LineLength
   end
 end

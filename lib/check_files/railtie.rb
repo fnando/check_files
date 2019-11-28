@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module CheckFiles
   class Railtie < Rails::Railtie
     config.check_files = ActiveSupport::OrderedOptions.new

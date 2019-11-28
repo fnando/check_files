@@ -1,7 +1,9 @@
-require "codeclimate-test-reporter"
-CodeClimate::TestReporter.start
+# frozen_string_literal: true
 
-$LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
+require "simplecov"
+SimpleCov.start
+
+$LOAD_PATH.unshift File.expand_path("../lib", __dir__)
 
 require "bundler/setup"
 
@@ -24,12 +26,14 @@ class Application < Rails::Application
   config.active_support.test_order = :random
   config.secret_token = SecureRandom.hex(100)
   config.secret_key_base = SecureRandom.hex(100)
+
+  config.hosts << "example.org" if config.respond_to?(:hosts)
 end
 
 Rails.application.initialize!
 
 Rails.application.routes.draw do
-  root to: -> env { [200, {"Content-Type" => "text/html"}, []] }
+  root to: ->(_env) { [200, {"Content-Type" => "text/html"}, []] }
 end
 
 module Minitest
@@ -44,7 +48,7 @@ module Minitest
     end
 
     def remove_file(path)
-      File.unlink(path)
+      File.unlink(path) if File.exist?(path)
     end
 
     def create_dir(path)

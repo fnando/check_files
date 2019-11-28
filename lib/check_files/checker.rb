@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module CheckFiles
   class Checker
     attr_reader :cache_path, :pattern
@@ -35,6 +37,7 @@ module CheckFiles
     end
 
     def update_cache
+      FileUtils.mkdir_p(File.dirname(cache_path))
       File.open(cache_path, "w") {|io| io << current_digest }
     end
 

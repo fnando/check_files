@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "test_helper"
 
 class MiddlewareTest < Minitest::Test
@@ -18,13 +20,15 @@ class MiddlewareTest < Minitest::Test
     remove_file("tmp/files/file.txt")
   end
 
-  test "returns error when something changes" do
-    get "/"
-    assert_equal 200, last_response.status
-
-    save_file("tmp/files/file.txt", "a")
+  test "checks for changes" do
+    CheckFiles.expects(:check!)
 
     get "/"
-    assert_equal 500, last_response.status
+  end
+
+  test "ignores assets" do
+    CheckFiles.stubs(:check!).raises("Should not be called")
+
+    get "/image.svg"
   end
 end
